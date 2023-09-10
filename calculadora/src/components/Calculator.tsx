@@ -24,6 +24,7 @@ const Calculator = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-1 flex-col">
         <h1 className="text-sm font-semibold my-2">Número 1</h1>
         <input
+          id="num1"
           type="text"
           placeholder="Ingresa el número 1"
           className={`p-2 border rounded text-center ${
@@ -37,11 +38,12 @@ const Calculator = () => {
             },
           })}
         />
-        <p className="text-red-500 my-2">
+        <p className="text-red-500 my-2" id="en1">
           {errors?.num1 && <>{errors.num1.message}</>}
         </p>
         <h1 className="text-sm font-semibold my-2">Número 2</h1>
         <input
+          id="num2"
           type="text"
           placeholder="Ingresa el número 2"
           className={`p-2 border rounded text-center ${
@@ -55,20 +57,25 @@ const Calculator = () => {
             },
           })}
         />
-        <p className="text-red-500 my-2">
+        <p className="text-red-500 my-2" id="en2">
           {errors?.num2 && <>{errors.num2.message}</>}
         </p>
         <button
           type="submit"
           className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
           data-testid="sum"
+          id="sum"
         >
           Sumar
         </button>
       </form>
       <div className="mt-4 font-bold justify-center flex">
         Resultado:
-        <span className="text-white bg-orange-700 font-bold px-1 rounded-md" data-testid="result">
+        <span
+          className="text-white bg-orange-700 font-bold px-1 rounded-md"
+          data-testid="result"
+          id="result"
+        >
           {result}
         </span>
       </div>
